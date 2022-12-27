@@ -1,0 +1,19 @@
+<form [formGroup]="form" (submit)="getData()">
+  <input type="text" name="username" formControlName="username"> <br>
+  <select name="color" formControlName="color">
+    <option>Color favorito</option>
+    <option value="rojo">Rojo</option>
+    <option value="verde">Verde</option>
+    <option value="azul">Azul</option>
+  </select>
+  <br>
+  <h2>Aficiones</h2>
+  <input type="checkbox" name="pesca" value="Pesca" formControlName="pesca">Pesca
+  <input type="checkbox" name="musica" value="Musica" formControlName="musica">Música
+  <input type="checkbox" name="lectura" value="Lectura" formControlName="lectura">Lectura
+  
+  <h2>Genero</h2>
+  <input type="radio" name="genero" value="Masculino" formControlName="genero">Masculino
+  <input type="radio" name="genero" value="Femenino" formControlName="genero">Femenino
+  <button type="submit">Enviar</button>
+</form>
