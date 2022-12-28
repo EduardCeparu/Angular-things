@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <div class="card ms-auto me-auto w-50">
+        <div class="card-body">
+            <form (submit)="save()">
+                <input type="text" name="nombre" class="form-control my-2 text-center" [(ngModel)]="nombre" placeholder="Nombre">
+                <input type="text" name="apellidos" class="form-control my-2 text-center" [(ngModel)]="apellidos" placeholder="Apellidos">
+                <select (change)="getOption()" class="form-select mb-2" name="opcion" [(ngModel)]="opcion">
+                    <option *ngFor="let d of departamentos" [value]= d.id>{{d.nombreDepartamento}}</option>
+                </select>
+                <button type="submit" class="btn btn-primary form-control">GUARDAR</button>
+            </form>
+        </div>
+    </div>
+</div>

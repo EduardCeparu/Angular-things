@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="card ms-auto me-auto w-50">
+        <div class="card-body">
+            <form (submit)="update()">
+                <input type="text" name="nombre" class="form-control my-2 text-center" [(ngModel)]="empleado.nombre"
+                    placeholder="Nombre">
+                <input type="text" name="apellidos" class="form-control my-2 text-center"
+                    [(ngModel)]="empleado.apellidos" placeholder="Apellidos">
+                <h5 class="mt-4 mb-2 text-center">Departamento actual</h5>
+                
+                <div *ngIf="!selDepartment">
+                    <div class="d-flex mb-2">
+                        <select class="form-select text-center " name="opcion" [(ngModel)]="empleado.departamento.id">
+                            <option [value]=empleado.departamento.id>{{empleado.departamento.nombreDepartamento}}
+                            </option>
+                        </select>
+                        <a (click)="loadDepartments()" class="btn btn-warning ms-2"><i
+                                class="fa-solid fa-pencil"></i></a>
+                    </div>
+                </div>
+                <div *ngIf="selDepartment">
+                    <select name="opcion" class="form-select mb-3 text-center" [(ngModel)]="empleado.departamento.id">
+                        <option *ngFor="let d of departamentos" [value]=d.id>{{d.nombreDepartamento}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary form-control">MODIFICAR</button>
+            </form>
+        </div>
+    </div>
+</div>

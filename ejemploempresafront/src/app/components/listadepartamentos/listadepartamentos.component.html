@@ -1,0 +1,18 @@
+<div class="container mt-5 w-50 ">
+    <a class="btn btn-success" [routerLink]="['/departamento/form']">
+        <i class="fa-solid fa-plus"></i>
+        ADD
+    </a>
+    <table class="table mt-3 ms-auto me-auto text-center table-bordered table-stripped">
+        <thead>
+            <tr>
+                <th>DEPARTAMENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let departamento of departamentos">
+                <td>{{departamento.nombreDepartamento}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
